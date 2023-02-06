@@ -1,0 +1,13 @@
+.card-list{
+    counter-reset: number;
+    .card-item{
+        counter-increment: number;
+        $variable: counter(number);
+        &::before{
+            content: counter(number);
+            left: 0;
+            color: #000;
+            font-size: 20px;
+        }
+    }
+}

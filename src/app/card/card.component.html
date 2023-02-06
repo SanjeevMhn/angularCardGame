@@ -1,0 +1,37 @@
+<div class="card-container p-2 card border border-black bg-white rounded-lg h-full flex items-center  w-[222px]">
+    <!-- {{data | json}} -->
+    <div class="header h-full">
+        <div class="card-value text-2xl text-center">
+            {{data?.value === '11' ? 'J' : data?.value === '1' ? 'A' : data?.value === '12' ? 'Q' : data?.value === '13' ? 'K' : data?.value}}
+        </div>
+        <div class="icon-container h-[30px] w-[30px]">
+            <img src="{{heart}}" alt="" *ngIf="data?.suit === 'HEART'">
+            <img src="{{clubs}}" alt="" *ngIf="data?.suit === 'CLUBS'">
+            <img src="{{spade}}" alt="" *ngIf="data?.suit === 'SPADE'">
+            <img src="{{diamond}}" alt="" *ngIf="data?.suit === 'DIAMOND'">
+        </div>
+    </div>
+    <div class="card-suit-container flex-grow">
+        <ul class="icon-list flex flex-wrap justify-center items-center">
+            <li class=" flex-[0_0_calc(100%/3)] p-[5px] flex justify-center items-center" *ngFor="let item of fakeArray">
+                <div class="icon-container h-[30px] w-[30px]">
+                    <img src="{{heart}}" alt="" *ngIf="data?.suit === 'HEART'">
+                    <img src="{{clubs}}" alt="" *ngIf="data?.suit === 'CLUBS'">
+                    <img src="{{spade}}" alt="" *ngIf="data?.suit === 'SPADE'">
+                    <img src="{{diamond}}" alt="" *ngIf="data?.suit === 'DIAMOND'">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="footer rotate-180 h-full">
+        <div class="card-value text-2xl text-center">
+            {{data?.value === '11' ? 'J' : data?.value === '1' ? 'A' : data?.value === '12' ? 'Q' : data?.value === '13' ? 'K' : data?.value}}
+        </div>
+        <div class="icon-container h-[30px] w-[30px]">
+            <img src="{{heart}}" alt="" *ngIf="data?.suit === 'HEART'">
+            <img src="{{clubs}}" alt="" *ngIf="data?.suit === 'CLUBS'">
+            <img src="{{spade}}" alt="" *ngIf="data?.suit === 'SPADE'">
+            <img src="{{diamond}}" alt="" *ngIf="data?.suit === 'DIAMOND'">
+        </div>
+    </div>
+</div>
