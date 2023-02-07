@@ -17,13 +17,15 @@ export class DeckComponent implements OnInit {
   };
   values:string[] = ["1","2","3","4","5","6","7","8","9","10","11","12","13"];
   deck:Card[] = [];
- 
+  totalCard:number = 5;
+  playerCard:Card[] = [];
 
  constructor() { }
 
   ngOnInit(): void {
     this.shuffleDeck();
-    console.log(this.deck);
+    this.distributePlayerCards();
+    console.log(this.playerCard);
   }
 
   setDeck():Card[]{
@@ -47,6 +49,16 @@ export class DeckComponent implements OnInit {
       let temp = this.deck[i];
       this.deck[i] = this.deck[j];
       this.deck[j] = temp;
+    }
+  }
+
+  distributePlayerCards():void{
+    let copyDeck = this.deck.slice();
+    for(let i=0; i<this.totalCard; i++){
+      let randomIndex = Math.floor(Math.random() * copyDeck.length);
+      let randomElement = copyDeck[randomIndex];
+      this.playerCard.push(randomElement);
+      copyDeck.splice(randomIndex,1);
     }
   }
 

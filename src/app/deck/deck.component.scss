@@ -1,13 +1,27 @@
 .card-list{
-    counter-reset: number;
     .card-item{
-        counter-increment: number;
-        $variable: counter(number);
-        &::before{
-            content: counter(number);
-            left: 0;
-            color: #000;
-            font-size: 20px;
+        z-index: 2;
+        &:not(:first-child){
+            // margin-left: -150px;
+            // margin-left: -222px;
+            animation: 0.5s ease-out 0s 1 forwards cardSlide;
         }
+        &:hover{
+            transition: all 0.5s ease-in-out;
+            transform: translateY(-50px);
+            &+.card-item{
+                margin-left: 100px;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+    }
+}
+
+@keyframes cardSlide {
+    0%{
+        margin-left: -222px;
+    }
+    100%{
+        margin-left: -150px;
     }
 }

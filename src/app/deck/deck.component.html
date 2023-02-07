@@ -1,5 +1,5 @@
-<ul class="card-list unstyled p-5 w-full flex flex-wrap relative">
-    <li class="card-item p-3 h-[300px] flex-[0_0_calc(100%/5)] flex justify-center absolute" *ngFor="let d of deck">
+<ul class="card-list unstyled p-5 w-full flex flex-wrap relative h-full">
+    <li class="card-item h-[300px] flex justify-center" *ngFor="let d of playerCard">
         <app-card [data] = "d"></app-card>
     </li>
 </ul>
